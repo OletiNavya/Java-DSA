@@ -1,0 +1,16 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+  if (nums.length == 0) return 0;
+
+        Map<Integer, Boolean> seen = new LinkedHashMap<>(); 
+        for (int num : nums) {
+            seen.put(num, true);
+        }
+
+        int i = 0;
+        for (int key : seen.keySet()) {
+            nums[i++] = key; 
+        }
+        return i; 
+    } 
+}
